@@ -4,7 +4,7 @@
         <!-- <img [src]="selectedUser.avatar" [alt]="selectedUser.name + '\'s image'" /> -->
         <!-- <img [src]="'assets/users'+selectedUser.avatar" alt="user image" /> -->
         <!-- if selectedUser avtar location is not complete then we can create dynamic path like this-->
-        <img [src]="imagePath()" [alt]="selectedUser().name + '\'s image'" />
-        <span>{{ selectedUser().name }}</span> <!-- string interpolation-->
+        <img [src]="imagePath" [alt]="name + '\'s image'" />
+        <span>{{ name }}</span> <!-- string interpolation-->
     </button>
 </div>
