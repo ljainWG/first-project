@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, input, computed} from '@angular/core';  // import input to accept inputs using signals to 
 import { DUMMY_USERS } from '../dummy-users';
 
 const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
@@ -26,12 +26,16 @@ export class UserComponent {
   //   this.selectedUser.set(DUMMY_USERS[randomIndex]);
   // }
 
-  @Input( {required : true} ) avatar!: string; // @Input() makes this property avatar settable from outside
-  @Input( {required : true} ) name!: string;
+  // @Input( {required : true} ) avatar!: string; // @Input() makes this property avatar settable from outside
+  // @Input( {required : true} ) name!: string;
 
-  get imagePath() {
-    return 'assets/users/' + this.avatar;
-  }
+  // get imagePath() {
+  //   return 'assets/users/' + this.avatar;
+  // }
+
+  avatar = input.required<string> (); // using signals to accept external values
+  name = input.required<string> ();
+  imagePath = computed( () => 'assets/users/' + this.avatar);
 
   onClickingOnUser(){ }
 
