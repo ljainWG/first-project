@@ -13,7 +13,14 @@ export class UserComponent {
   public selectedUser =  DUMMY_USERS[randomIndex];  // public private protected
 
   get imagePath() {
-    return this.selectedUser.avatar;  // return the path of the image
+    // return '././assets/users/'+this.selectedUser.avatar;  // return the path of the image
+    return 'assets/users/'+this.selectedUser.avatar;  // return the path of the image
   }
   
+  onClickingOnUser(){
+    // console.log('User clicked');
+    const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
+    this.selectedUser =  DUMMY_USERS[randomIndex];
+  }
+
 }
