@@ -14,9 +14,7 @@ export class UserComponent {
   @Input() userId !: string;
   @Input( {required : true} ) avatar!: string;
   @Input( {required : true} ) name!: string;
-  // @Output() TextBoxOnClickingUserButton = new EventEmitter();
-  TextBoxOnClickingUserButton = output<string> ();   // this output() creates EventEmitter object automatically, we donot have to make it explicitly as we did in Output decorator
-  // output function works exctaly same as Output decorator, it is used to create an event emitter object
+  @Output() TextBoxOnClickingUserButton = new EventEmitter<string> ();
 
   get imagePath() {
     return 'assets/users/' + this.avatar;
