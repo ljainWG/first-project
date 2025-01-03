@@ -11,17 +11,15 @@ const randomIndex = Math.floor(Math.random() * DUMMY_USERS.length);
 })
 export class UserComponent {
 
-  @Input() userId !: string;
-  @Input( {required : true} ) avatar!: string;
-  @Input( {required : true} ) name!: string;
+  @Input({required: true}) user !: {id:string, name:string, avatar:string};
   @Output() TextBoxOnClickingUserButton = new EventEmitter<string> ();
 
   get imagePath() {
-    return 'assets/users/' + this.avatar;
+    return 'assets/users/' + this.user.avatar;
   }
 
   onClickingOnUser(){
-    this.TextBoxOnClickingUserButton.emit(this.userId);
+    this.TextBoxOnClickingUserButton.emit(this.user.id);
   }
 
 }
