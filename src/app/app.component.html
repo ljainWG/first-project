@@ -353,6 +353,10 @@
     <li><app-user [userId]="users[5].id" [avatar]="users[5].avatar" [name]="users[5].name"
         (TextBoxOnClickingUserButton)="onSelectUser($event)" /></li>
   </ul>
+
+  <app-tasks [name]="selectedUser.name" />
+
+
 </main>
 
 
