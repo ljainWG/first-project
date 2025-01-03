@@ -14,7 +14,8 @@ import { TasksComponent } from "./tasks/tasks.component";
 export class AppComponent {
   title = 'first-project';
   users = DUMMY_USERS;
-  selectedUserId: string = "u1";
+  // selectedUserId: string = "u1";
+  selectedUserId?: string;
   
   onSelectUser(id: string) {
     // console.log('Selected user id: ' + id);
